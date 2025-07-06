@@ -1,0 +1,50 @@
+import { SignUp } from '@clerk/nextjs'
+import { FileText } from 'lucide-react'
+import Link from 'next/link'
+
+export default function Page() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        {/* Logo */}
+        <div className="text-center mb-8">
+          <Link href="/" className="inline-flex items-center space-x-2">
+            <FileText className="h-8 w-8 text-purple-400" />
+            <span className="text-2xl font-bold text-white">SummaryAI</span>
+          </Link>
+          <p className="text-gray-300 mt-2">Create your account</p>
+        </div>
+
+        {/* Clerk Sign Up Component */}
+        <div className="bg-white/10 backdrop-blur-md rounded-lg p-1">
+          <SignUp 
+            appearance={{
+              elements: {
+                rootBox: "w-full",
+                card: "bg-white shadow-xl border-0 rounded-lg",
+                headerTitle: "text-2xl font-bold text-gray-900",
+                headerSubtitle: "text-gray-600",
+                socialButtonsBlockButton: "bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium",
+                socialButtonsBlockButtonText: "font-medium",
+                formButtonPrimary: "bg-purple-600 hover:bg-purple-700 text-white font-medium",
+                footerActionLink: "text-purple-600 hover:text-purple-500",
+                identityPreviewEditButton: "text-purple-600 hover:text-purple-500",
+                formFieldInput: "border-gray-300 focus:border-purple-500 focus:ring-purple-500",
+              }
+            }}
+          />
+        </div>
+
+        {/* Footer */}
+        <div className="text-center mt-6">
+          <p className="text-gray-400 text-sm">
+            Already have an account?{' '}
+            <Link href="/sign-in" className="text-purple-400 hover:text-purple-300 font-medium">
+              Sign in
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
