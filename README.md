@@ -206,33 +206,6 @@ The project uses NeonDB (PostgreSQL) with Drizzle ORM. Configure your database c
 2. Create a new project and get your API keys
 3. Configure file upload settings in `src/lib/uploadthing.ts`
 
-## 📸 Adding More Screenshots
-
-To add additional screenshots to your README:
-
-### 1. Place screenshots in the public folder:
-
-- Save screenshots as PNG or JPG files
-- Recommended size: 800x600 or 1200x800 for optimal display
-- Use descriptive names like `feature-name.png`
-
-### 2. Reference them in README:
-
-```markdown
-![Feature Name](public/feature-name.png)
-```
-
-### 3. For GitHub README (relative paths):
-
-```markdown
-![Feature Name](./public/feature-name.png)
-```
-
-### 4. Alternative methods:
-
-- **GitHub Issues**: Drag and drop images into any GitHub issue comment box, then copy the generated URL
-- **External hosting**: Use [Cloudinary](https://cloudinary.com/), [Imgur](https://imgur.com/), or [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) for better performance
-
 ## 🚀 Deployment
 
 ### Deploy to Vercel
