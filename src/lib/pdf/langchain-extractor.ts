@@ -80,9 +80,9 @@ export async function extractPDFWithLangChain(fileUrl: string, fileName: string)
 
     // Print the extracted text to terminal for debugging
     console.log("📝 EXTRACTED TEXT:")
-    console.log("=" * 50)
+    console.log("=".repeat(50))
     console.log(extractedText.substring(0, 1000)) // First 1000 characters
-    console.log("=" * 50)
+    console.log("=".repeat(50))
 
     // Validate extracted text
     if (!extractedText || extractedText.trim().length < 50) {
@@ -161,7 +161,6 @@ async function extractWithPDFParseFallback(fileUrl: string, fileName: string): P
 
     const options = {
       max: 0, // Parse all pages
-      version: "v1.1.0",
     }
 
     const data = await pdfParse(buffer, options)
@@ -178,9 +177,9 @@ async function extractWithPDFParseFallback(fileUrl: string, fileName: string): P
       .trim()
 
     console.log("📝 PDF-PARSE EXTRACTED TEXT:")
-    console.log("=" * 50)
+    console.log("=".repeat(50))
     console.log(cleanText.substring(0, 1000)) // First 1000 characters
-    console.log("=" * 50)
+    console.log("=".repeat(50))
 
     if (cleanText.length < 50) {
       throw new Error("Extracted text too short")

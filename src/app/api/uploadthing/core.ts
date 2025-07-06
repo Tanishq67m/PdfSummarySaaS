@@ -12,7 +12,7 @@ export const ourFileRouter = {
       maxFileCount: 1,
     },
   })
-    .middleware(async ({ req }) => {
+    .middleware(async () => {
       const { userId } = await auth()
 
       if (!userId) {

@@ -13,7 +13,7 @@ interface ProcessingStatus {
   progress: number
   message: string
   summaryId?: number
-  debug?: any // Add debug info
+  debug?: unknown // Add debug info
 }
 
 export default function SummaryLoadingPage() {
@@ -27,7 +27,7 @@ export default function SummaryLoadingPage() {
     message: "Starting document processing...",
   })
 
-  const [debugInfo, setDebugInfo] = useState<any>(null)
+
 
   useEffect(() => {
     if (!documentId) {
@@ -45,7 +45,6 @@ export default function SummaryLoadingPage() {
         const data = await res.json()
 
         console.log("📊 API Response:", data)
-        setDebugInfo(data) // Store for debugging
 
         // Check if summary exists and is completed
         if (data?.summary?.id) {
@@ -107,7 +106,7 @@ export default function SummaryLoadingPage() {
           status: "error",
           progress: 0,
           message: "Failed to check processing status",
-          debug: { error: err.message },
+          debug: { error: err instanceof Error ? err.message : "Unknown error" },
         })
       }
     }

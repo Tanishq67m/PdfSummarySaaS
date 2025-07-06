@@ -1,14 +1,14 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, TargetAndTransition, Transition } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface MotionWrapperProps {
   children: ReactNode;
   className?: string;
-  initial?: any;
-  animate?: any;
-  transition?: any;
+  initial?: TargetAndTransition;
+  animate?: TargetAndTransition;
+  transition?: Transition;
   delay?: number;
 }
 

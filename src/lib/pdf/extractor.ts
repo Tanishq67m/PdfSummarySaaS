@@ -50,21 +50,21 @@ export async function extractPDFContent(fileUrl: string): Promise<ExtractedConte
       fileNameLower.includes("booking") ||
       fileNameLower.includes("confirmation")
     ) {
-      mockText = generateTravelContent(fileSizeKB)
+      mockText = generateTravelContent()
     } else if (
       fileNameLower.includes("legal") ||
       fileNameLower.includes("contract") ||
       fileNameLower.includes("agreement")
     ) {
-      mockText = generateLegalContent(fileSizeKB)
+      mockText = generateLegalContent()
     } else if (
       fileNameLower.includes("research") ||
       fileNameLower.includes("study") ||
       fileNameLower.includes("analysis")
     ) {
-      mockText = generateResearchContent(fileSizeKB)
+      mockText = generateResearchContent()
     } else {
-      mockText = generateGeneralContent(fileSizeKB)
+      mockText = generateGeneralContent()
     }
 
     const pageCount = Math.max(1, Math.ceil(fileSizeKB / 50)) // Rough estimate: 50KB per page
@@ -266,7 +266,7 @@ Investment requirements:
   return fileSizeKB > 100 ? baseContent + generateAdditionalBusinessContent() : baseContent.trim()
 }
 
-function generateTravelContent(fileSizeKB: number): string {
+function generateTravelContent(): string {
   return `
 TRAVEL BOOKING CONFIRMATION
 
@@ -332,7 +332,7 @@ Have a wonderful trip!
   `
 }
 
-function generateLegalContent(fileSizeKB: number): string {
+function generateLegalContent(): string {
   return `
 SERVICE AGREEMENT CONTRACT
 
@@ -388,7 +388,7 @@ Client Representative: _________________ Date: _________
   `
 }
 
-function generateResearchContent(fileSizeKB: number): string {
+function generateResearchContent(): string {
   return `
 RESEARCH STUDY: IMPACT OF DIGITAL TRANSFORMATION ON ORGANIZATIONAL PERFORMANCE
 
@@ -458,7 +458,7 @@ Digital transformation significantly impacts organizational performance when imp
   `
 }
 
-function generateGeneralContent(fileSizeKB: number): string {
+function generateGeneralContent(): string {
   return `
 COMPREHENSIVE DOCUMENT ANALYSIS
 

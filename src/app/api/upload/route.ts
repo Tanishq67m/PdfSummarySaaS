@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
         fileUrl: uploadedFile.ufsUrl,
         fileSize: uploadedFile.size || file.size,
         uploadthingId: uploadedFile.key,
-        fileKey: uploadedFile.key,
+        
         status: "uploaded",
       })
       .returning()

@@ -212,7 +212,7 @@ export default function LandingPage() {
               >
                 <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                   <CardContent className="pt-6">
-                    <p className="text-gray-300 mb-4">"{testimonial.content}"</p>
+                    <p className="text-gray-300 mb-4">&ldquo;{testimonial.content}&rdquo;</p>
                     <div className="flex items-center">
                       <div className="h-10 w-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
                         {testimonial.avatar}

@@ -105,7 +105,7 @@ export default async function SummaryPage({ params }: SummaryPageProps) {
           </div>
           <div className="space-y-2">
             <h2 className="text-3xl font-bold text-white">Summary Not Found</h2>
-            <p className="text-gray-400">The summary you're looking for doesn't exist or is still being processed.</p>
+            <p className="text-gray-400">The summary you&apos;re looking for doesn&apos;t exist or is still being processed.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/dashboard">

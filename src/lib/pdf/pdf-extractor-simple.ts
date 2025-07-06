@@ -113,15 +113,14 @@ export interface PDFExtractionResult {
       const buffer = Buffer.from(arrayBuffer)
   
       // Try to use pdf-parse with minimal configuration
-      const pdfParse = require("pdf-parse")
+      const pdfParse = await import("pdf-parse")
   
       const options = {
         // Minimal options to avoid test file issues
         max: 0, // Parse all pages
-        version: "v1.1.0",
       }
   
-      const data = await pdfParse(buffer, options)
+      const data = await pdfParse.default(buffer, options)
   
       if (!data || !data.text || data.text.trim().length < 10) {
         throw new Error("No readable text found in PDF")
